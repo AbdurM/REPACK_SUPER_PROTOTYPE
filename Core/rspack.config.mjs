@@ -38,6 +38,7 @@ export default Repack.defineRspackConfig({
       dts: false,
       remotes: {
         TransactionsModule: `TransactionsModule@http://127.0.0.1:9000/ios/TransactionsModule.container.js.bundle`,
+        ProfilePlugin: `ProfilePlugin@http://127.0.0.1:9001/ios/ProfilePlugin.container.js.bundle`,
       }
     })
   ],

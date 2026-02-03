@@ -32,5 +32,15 @@ export default Repack.defineRspackConfig({
       ...Repack.getAssetTransformRules(),
     ],
   },
-  plugins: [new Repack.RepackPlugin()],
+  plugins: [
+    new Repack.RepackPlugin(),
+    new Repack.plugins.ModuleFederationPluginV2({
+      name: 'ProfilePlugin',
+      filename: 'ProfilePlugin.container.js.bundle',
+      dts: false,
+      exposes: {
+        './Profile': './Profile',
+      },
+    }),
+  ],
 });

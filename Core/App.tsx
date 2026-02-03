@@ -34,7 +34,7 @@ function AppContent() {
     <View style={styles.container}>
       <Suspense fallback={<Text>Loading...</Text>}>
         <SafeAreaView style={styles.safeArea}>
-          <TransactionsList />
+          <Profile />
         </SafeAreaView>
       </Suspense>
     </View>
@@ -44,7 +44,7 @@ function AppContent() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'orange',
+    backgroundColor: 'white',
   },
   safeArea: {
     flex: 1,

@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import React, { Suspense } from 'react';
+import { config } from './config';
 
 const TransactionsList = React.lazy(
   () => import('TransactionsPlugin/TransactionsList'),
@@ -45,7 +46,7 @@ function AppContent() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: config.brandColor,
   },
   safeArea: {
     flex: 1,

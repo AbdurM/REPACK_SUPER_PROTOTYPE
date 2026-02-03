@@ -1,18 +1,9 @@
-export const configMlcsV =
+export const config =
 {
   "plugins": [
     "TransactionsPlugin",
     "ProfilePlugin",
     ],
-  "Color": "orange",
-}
-
-export const configPlum =
-{
-  "plugins": [
-    "TransactionsPlugin",
-    "ProfilePlugin",
-    ],
-  "Color": "purple",
+  "brandColor": "purple",
 }
  

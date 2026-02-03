@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "TransactionsModule.app"
-               BlueprintName = "TransactionsModule"
-               ReferencedContainer = "container:TransactionsModule.xcodeproj">
+               BuildableName = "TransactionsPlugin.app"
+               BlueprintName = "TransactionsPlugin"
+               ReferencedContainer = "container:TransactionsPlugin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "TransactionsModuleTests.xctest"
-               BlueprintName = "TransactionsModuleTests"
-               ReferencedContainer = "container:TransactionsModule.xcodeproj">
+               BuildableName = "TransactionsPluginTests.xctest"
+               BlueprintName = "TransactionsPluginTests"
+               ReferencedContainer = "container:TransactionsPlugin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "TransactionsModule.app"
-            BlueprintName = "TransactionsModule"
-            ReferencedContainer = "container:TransactionsModule.xcodeproj">
+            BuildableName = "TransactionsPlugin.app"
+            BlueprintName = "TransactionsPlugin"
+            ReferencedContainer = "container:TransactionsPlugin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "TransactionsModule.app"
-            BlueprintName = "TransactionsModule"
-            ReferencedContainer = "container:TransactionsModule.xcodeproj">
+            BuildableName = "TransactionsPlugin.app"
+            BlueprintName = "TransactionsPlugin"
+            ReferencedContainer = "container:TransactionsPlugin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

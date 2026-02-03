@@ -32,11 +32,11 @@ export default Repack.defineRspackConfig({
       ...Repack.getAssetTransformRules(),
     ],
   },
-  plugins: [
+    plugins: [
     new Repack.RepackPlugin(),
     new Repack.plugins.ModuleFederationPluginV2({
-      name: 'TransactionsModule',
-      filename: 'TransactionsModule.container.js.bundle',
+      name: 'TransactionsPlugin',
+      filename: 'TransactionsPlugin.container.js.bundle',
       dts: false,
       exposes: {
         './TransactionsList': './TransactionsList',

@@ -1,5 +1,5 @@
 {
-  "name": "TransactionsModule",
+  "name": "TransactionsPlugin",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,14 +10,13 @@
     "test": "jest"
   },
   "dependencies": {
-    "@module-federation/enhanced": "^0.23.0",
-    "@react-native/new-app-screen": "0.81.5",
     "react": "19.1.0",
     "react-native": "0.81.5",
-    "react-native-safe-area-context": "^5.5.2",
-    "zephyr-repack-plugin": "^0.1.10"
+    "@react-native/new-app-screen": "0.81.5",
+    "react-native-safe-area-context": "^5.5.2"
   },
   "devDependencies": {
+    "@module-federation/enhanced": "^0.23.0",
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",

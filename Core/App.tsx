@@ -16,8 +16,9 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import React, { Suspense } from 'react';
 
 const TransactionsList = React.lazy(
-  () => import('TransactionsModule/TransactionsList'),
+  () => import('TransactionsPlugin/TransactionsList'),
 );
+const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -34,7 +35,7 @@ function AppContent() {
     <View style={styles.container}>
       <Suspense fallback={<Text>Loading...</Text>}>
         <SafeAreaView style={styles.safeArea}>
-          <Profile />
+          <TransactionsList />
         </SafeAreaView>
       </Suspense>
     </View>

@@ -95,10 +95,10 @@ const TransactionsList = () => {
     <View style={[styles.container, isDark && styles.containerDark]}>
       <View style={styles.header}>
         <Text style={[styles.title, isDark && styles.textDark]}>
-          Recent Transactions
+          Abdur Transactions
         </Text>
         <Text style={[styles.subtitle, isDark && styles.subtextDark]}>
-          Your superannuation activity
+          Your superannuation activity Nathan
         </Text>
       </View>
 
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'white',
     paddingVertical: 16,
     paddingHorizontal: 16,
     borderRadius: 12,

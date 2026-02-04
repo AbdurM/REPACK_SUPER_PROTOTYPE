@@ -95,10 +95,10 @@ const TransactionsList = () => {
     <View style={[styles.container, isDark && styles.containerDark]}>
       <View style={styles.header}>
         <Text style={[styles.title, isDark && styles.textDark]}>
-          Abdur Transactions
+          Transactions
         </Text>
         <Text style={[styles.subtitle, isDark && styles.subtextDark]}>
-          Your superannuation activity Nathan
+          Your superannuation activity
         </Text>
       </View>
 

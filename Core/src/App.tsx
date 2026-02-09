@@ -24,11 +24,45 @@ const TransactionsList = React.lazy(
 const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
 
 const Tab = createBottomTabNavigator();
+const CORE_TRANSACTIONS = [
+  {
+    id: 'c1',
+    type: 'Employer Contribution',
+    amount: 1250.0,
+    date: '2 Feb 2026',
+    description: 'Monthly SG contribution',
+  },
+  {
+    id: 'c2',
+    type: 'Personal Contribution',
+    amount: 500.0,
+    date: '1 Feb 2026',
+    description: 'Voluntary contribution',
+  },
+  {
+    id: 'c3',
+    type: 'Insurance Premium',
+    amount: -45.5,
+    date: '1 Feb 2026',
+    description: 'Life & TPD cover',
+  },
+  {
+    id: 'c4',
+    type: 'Administration Fee',
+    amount: -12.0,
+    date: '31 Jan 2026',
+    description: 'Monthly admin fee',
+  },
+];
+
 const pluginScreens = {
   TransactionsPlugin: {
     name: 'Transactions',
     component: () => (
-      <TransactionsList title="Transactions: Title passed from Core" />
+      <TransactionsList
+        title="Transactions (from Core)"
+        transactions={CORE_TRANSACTIONS}
+      />
     ),
   },
   ProfilePlugin: {

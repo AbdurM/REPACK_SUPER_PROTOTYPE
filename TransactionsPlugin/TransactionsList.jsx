@@ -1,50 +1,7 @@
 import { StyleSheet, Text, View, FlatList, useColorScheme } from 'react-native';
 import React from 'react';
 
-const SAMPLE_TRANSACTIONS = [
-  {
-    id: '1',
-    type: 'Employer Contribution',
-    amount: 1250.0,
-    date: '2 Feb 2025',
-    description: 'Monthly SG contribution',
-  },
-  {
-    id: '2',
-    type: 'Personal Contribution',
-    amount: 500.0,
-    date: '1 Feb 2025',
-    description: 'Voluntary contribution',
-  },
-  {
-    id: '3',
-    type: 'Insurance Premium',
-    amount: -45.5,
-    date: '1 Feb 2025',
-    description: 'Life & TPD cover',
-  },
-  {
-    id: '4',
-    type: 'Administration Fee',
-    amount: -12.0,
-    date: '31 Jan 2025',
-    description: 'Monthly admin fee',
-  },
-  {
-    id: '5',
-    type: 'Employer Contribution',
-    amount: 1250.0,
-    date: '2 Jan 2025',
-    description: 'Monthly SG contribution',
-  },
-  {
-    id: '6',
-    type: 'Rollover',
-    amount: 15000.0,
-    date: '28 Dec 2024',
-    description: 'From previous fund',
-  },
-];
+const DEFAULT_TRANSACTIONS = [];
 
 const formatAmount = amount => {
   const formatted = Math.abs(amount).toLocaleString('en-AU', {
@@ -88,9 +45,12 @@ const TransactionItem = ({ item, isDark }) => {
   );
 };
 
-const TransactionsList = ({ title = 'Transactions' }) => {
+const TransactionsList = ({
+  title = 'Transactions',
+  transactions = DEFAULT_TRANSACTIONS,
+}) => {
   const isDark = useColorScheme() === 'dark';
-  const s = '0';
+
   return (
     <View style={[styles.container, isDark && styles.containerDark]}>
       <View style={styles.header}>
@@ -101,7 +61,7 @@ const TransactionsList = ({ title = 'Transactions' }) => {
       </View>
 
       <FlatList
-        data={SAMPLE_TRANSACTIONS}
+        data={transactions}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <TransactionItem item={item} isDark={isDark} />

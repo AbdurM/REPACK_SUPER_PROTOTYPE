@@ -17,6 +17,8 @@ import React, { Suspense } from 'react';
 import { config } from './config/config';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Provider, useSelector } from 'react-redux';
+import { store, RootState } from './store/store';
 
 const TransactionsList = React.lazy(
   () => import('TransactionsPlugin/TransactionsList'),
@@ -24,46 +26,23 @@ const TransactionsList = React.lazy(
 const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
 
 const Tab = createBottomTabNavigator();
-const CORE_TRANSACTIONS = [
-  {
-    id: 'c1',
-    type: 'Employer Contribution',
-    amount: 1250.0,
-    date: '2 Feb 2026',
-    description: 'Monthly SG contribution',
-  },
-  {
-    id: 'c2',
-    type: 'Personal Contribution',
-    amount: 500.0,
-    date: '1 Feb 2026',
-    description: 'Voluntary contribution',
-  },
-  {
-    id: 'c3',
-    type: 'Insurance Premium',
-    amount: -45.5,
-    date: '1 Feb 2026',
-    description: 'Life & TPD cover',
-  },
-  {
-    id: 'c4',
-    type: 'Administration Fee',
-    amount: -12.0,
-    date: '31 Jan 2026',
-    description: 'Monthly admin fee',
-  },
-];
+function TransactionsScreen() {
+  const transactions = useSelector(
+    (state: RootState) => state.transactions.items,
+  );
+
+  return (
+    <TransactionsList
+      title="Transactions (from Core store)"
+      transactions={transactions}
+    />
+  );
+}
 
 const pluginScreens = {
   TransactionsPlugin: {
     name: 'Transactions',
-    component: () => (
-      <TransactionsList
-        title="Transactions (from Core)"
-        transactions={CORE_TRANSACTIONS}
-      />
-    ),
+    component: TransactionsScreen,
   },
   ProfilePlugin: {
     name: 'Profile',
@@ -94,10 +73,12 @@ function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <AppContent />
+      </SafeAreaProvider>
+    </Provider>
   );
 }
 

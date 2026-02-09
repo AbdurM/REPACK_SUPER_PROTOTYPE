@@ -88,15 +88,13 @@ const TransactionItem = ({ item, isDark }) => {
   );
 };
 
-const TransactionsList = () => {
+const TransactionsList = ({ title = 'Transactions' }) => {
   const isDark = useColorScheme() === 'dark';
-
+  const s = '0';
   return (
     <View style={[styles.container, isDark && styles.containerDark]}>
       <View style={styles.header}>
-        <Text style={[styles.title, isDark && styles.textDark]}>
-          Transactions
-        </Text>
+        <Text style={[styles.title, isDark && styles.textDark]}>{title}</Text>
         <Text style={[styles.subtitle, isDark && styles.subtextDark]}>
           Your superannuation activity
         </Text>

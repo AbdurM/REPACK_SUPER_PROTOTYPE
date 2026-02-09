@@ -27,7 +27,9 @@ const Tab = createBottomTabNavigator();
 const pluginScreens = {
   TransactionsPlugin: {
     name: 'Transactions',
-    component: TransactionsList,
+    component: () => (
+      <TransactionsList title="Transactions: Title passed from Core" />
+    ),
   },
   ProfilePlugin: {
     name: 'Profile',

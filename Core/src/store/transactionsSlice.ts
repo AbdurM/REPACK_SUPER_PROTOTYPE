@@ -30,6 +30,20 @@ const initialState = {
       date: '31 Jan 2026',
       description: 'Monthly admin fee',
     },
+    {
+      id: 'c5',
+      type: 'Employer Contribution',
+      amount: 1250.0,
+      date: '15 Jan 2026',
+      description: 'Monthly SG contribution',
+    },
+    {
+      id: 'c6',
+      type: 'Employer Contribution',
+      amount: 1250.0,
+      date: '1 Jan 2026',
+      description: 'Monthly SG contribution',
+    },
   ],
 };
 

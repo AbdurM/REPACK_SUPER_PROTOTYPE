@@ -50,7 +50,12 @@ const initialState = {
 const transactionsSlice = createSlice({
   name: 'transactions',
   initialState,
-  reducers: {},
+  reducers: {
+    addTransaction: (state, action) => {
+      state.items.unshift(action.payload);
+    },
+  },
 });
 
+export const { addTransaction } = transactionsSlice.actions;
 export default transactionsSlice.reducer;

@@ -5,20 +5,16 @@
  * @format
  */
 
-import {
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-  View,
-  Text,
-} from 'react-native';
+import { StatusBar, StyleSheet, useColorScheme, View, Text } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import React, { Suspense } from 'react';
 import { config } from './config/config';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Provider, useSelector } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 import { store, RootState } from './store/store';
+import { addTransaction } from './store/transactionsSlice';
+import Fab from './components/Fab';
 
 const TransactionsList = React.lazy(
   () => import('TransactionsPlugin/TransactionsList'),
@@ -27,15 +23,37 @@ const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
 
 const Tab = createBottomTabNavigator();
 function TransactionsScreen() {
+  const dispatch = useDispatch();
   const transactions = useSelector(
     (state: RootState) => state.transactions.items,
   );
 
   return (
-    <TransactionsList
-      title="Transactions (from Core store)"
-      transactions={transactions}
-    />
+    <View style={styles.screen}>
+      <TransactionsList
+        title="Transactions (from Core store)"
+        transactions={transactions}
+      />
+      <Fab
+        onPress={() => {
+          const now = new Date();
+          dispatch(
+            addTransaction({
+              id: `c-${now.getTime()}`,
+              type: 'Manual Contribution',
+              amount: 250.0,
+              date: now.toLocaleDateString('en-AU', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+              }),
+              description: 'Added from Core',
+            }),
+          );
+        }}
+        accessibilityLabel="Add transaction"
+      />
+    </View>
   );
 }
 
@@ -96,6 +114,9 @@ function AppContent() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  screen: {
     flex: 1,
   },
 });

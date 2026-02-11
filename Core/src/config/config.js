@@ -5,7 +5,11 @@ export const config =
     "ProfilePlugin",
   ],
   "transactionsPluginSettings": {
-    "isHeaderVisible": true
+    "isHeaderVisible": true,
+    "content": {
+      "title": "Transactions",
+      "subtitle": "For transactions over 12 months, please visit the website.",
+    },
   }
 }
  

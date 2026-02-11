@@ -34,7 +34,7 @@ export default Repack.defineRspackConfig({
   },
    plugins: [new Repack.RepackPlugin(),
     new Repack.plugins.ModuleFederationPluginV2({
-      name: 'host',
+      name: 'core',
       dts: false,
       remotes: {
         TransactionsPlugin: `TransactionsPlugin@http://127.0.0.1:9000/ios/TransactionsPlugin.container.js.bundle`,

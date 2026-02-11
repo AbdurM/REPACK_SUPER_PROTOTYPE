@@ -48,17 +48,20 @@ const TransactionItem = ({ item, isDark }) => {
 const TransactionsList = ({
   title = 'Transactions',
   transactions = DEFAULT_TRANSACTIONS,
+  isHeaderVisible = true,
 }) => {
   const isDark = useColorScheme() === 'dark';
 
   return (
     <View style={[styles.container, isDark && styles.containerDark]}>
-      <View style={styles.header}>
-        <Text style={[styles.title, isDark && styles.textDark]}>{title}</Text>
-        <Text style={[styles.subtitle, isDark && styles.subtextDark]}>
-          Your superannuation activity
-        </Text>
-      </View>
+      {isHeaderVisible ? (
+        <View style={styles.header}>
+          <Text style={[styles.title, isDark && styles.textDark]}>{title}</Text>
+          <Text style={[styles.subtitle, isDark && styles.subtextDark]}>
+            Your superannuation activity
+          </Text>
+        </View>
+      ) : null}
 
       <FlatList
         data={transactions}

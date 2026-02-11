@@ -39,8 +39,9 @@ function TransactionsScreen() {
   return (
     <View style={styles.screen}>
       <TransactionsList
-        title="Transactions (from Core store)"
+        title="Transactions (from Core)"
         transactions={transactions}
+        isHeaderVisible={config.transactionsPluginSettings.isHeaderVisible}
       />
       <Fab
         onPress={() => {

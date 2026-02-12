@@ -46,7 +46,7 @@ const TransactionItem = ({ item, isDark }) => {
 };
 
 const TransactionsList = ({
-  title = 'Transactions',
+  content,
   transactions = DEFAULT_TRANSACTIONS,
   isHeaderVisible = true,
 }) => {
@@ -56,10 +56,8 @@ const TransactionsList = ({
     <View style={[styles.container, isDark && styles.containerDark]}>
       {isHeaderVisible ? (
         <View style={styles.header}>
-          <Text style={[styles.title, isDark && styles.textDark]}>{title}</Text>
-          <Text style={[styles.subtitle, isDark && styles.subtextDark]}>
-            Your superannuation activity
-          </Text>
+          {content.title && <Text style={[styles.title, isDark && styles.textDark]}>{content.title}</Text> }
+          {content.subtitle && <Text style={[styles.subtitle, isDark && styles.subtextDark]}>{content.subtitle}</Text> }
         </View>
       ) : null}
 
@@ -106,7 +104,8 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 14,
     color: '#64748b',
-    marginTop: 4,
+    marginTop: 20,
+    marginHorizontal: 5,
   },
   subtextDark: {
     color: '#94a3b8',

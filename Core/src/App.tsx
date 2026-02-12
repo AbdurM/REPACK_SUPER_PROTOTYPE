@@ -39,7 +39,7 @@ function TransactionsScreen() {
   return (
     <View style={styles.screen}>
       <TransactionsList
-        title="Transactions (from Core)"
+        content={config.transactionsPluginSettings.content}
         transactions={transactions}
         isHeaderVisible={config.transactionsPluginSettings.isHeaderVisible}
       />

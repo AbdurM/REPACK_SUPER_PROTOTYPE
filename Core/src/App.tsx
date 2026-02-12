@@ -29,6 +29,8 @@ const TransactionsList = React.lazy(
 );
 const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
 
+const Auth = React.lazy(() => import('AuthPlugin/Login'));
+
 const Tab = createBottomTabNavigator();
 function TransactionsScreen() {
   const dispatch = useDispatch();

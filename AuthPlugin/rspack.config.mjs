@@ -32,5 +32,14 @@ export default Repack.defineRspackConfig({
       ...Repack.getAssetTransformRules(),
     ],
   },
-  plugins: [new Repack.RepackPlugin()],
+  plugins: [new Repack.RepackPlugin(),
+       new Repack.plugins.ModuleFederationPluginV2({
+      name: 'AuthPlugin',
+      filename: 'AuthPlugin.container.js.bundle',
+      dts: false,
+      exposes: {
+        './Login': './Login',
+       },
+    }),
+  ],
 });

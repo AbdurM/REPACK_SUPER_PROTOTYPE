@@ -1,4 +1,6 @@
-export function authenticate() {
- return false;   
-} 
-export default authenticate;
+export const Auth = {
+  authenticate: () => {
+    return false;
+  },
+};
+

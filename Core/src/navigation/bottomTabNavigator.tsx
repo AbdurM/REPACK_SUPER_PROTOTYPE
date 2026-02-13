@@ -81,7 +81,7 @@ export default function BottomTabNavigator() {
 
   const getAuthenticated = async () => {
     const authPlugin = await import('AuthPlugin/Auth');
-    const authenticationStatus = authPlugin.authenticate();
+    const authenticationStatus = authPlugin.Auth.authenticate();
     dispatch(addAuthenticationStatus(authenticationStatus));
   };
 

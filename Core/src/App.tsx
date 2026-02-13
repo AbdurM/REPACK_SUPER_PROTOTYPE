@@ -5,13 +5,20 @@
  * @format
  */
 
-import { StatusBar, StyleSheet, useColorScheme, View, Text } from 'react-native';
+import {
+  StatusBar,
+  StyleSheet,
+  useColorScheme,
+  View,
+  Text,
+} from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import { store } from './store/store';
 import BottomTabNavigator from './navigation/bottomTabNavigator';
+import { addAuthenticationStatus } from './store/authSlice';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';

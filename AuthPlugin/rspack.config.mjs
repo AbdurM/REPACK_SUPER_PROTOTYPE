@@ -38,7 +38,7 @@ export default Repack.defineRspackConfig({
       filename: 'AuthPlugin.container.js.bundle',
       dts: false,
       exposes: {
-        './Login': './Login',
+        './Auth': './Auth',
        },
     }),
   ],

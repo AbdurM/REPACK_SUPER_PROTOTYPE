@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -8,6 +8,7 @@ import { RootState } from '../store/store';
 import { addTransaction } from '../store/transactionsSlice';
 import Fab from '../components/Fab';
 import { getNextPreset } from '../store/transactionPresets';
+import { addAuthenticationStatus } from '../store/authSlice';
 
 const TransactionsList = React.lazy(
   () => import('TransactionsPlugin/TransactionsList'),
@@ -16,7 +17,7 @@ const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
 
 const Tab = createBottomTabNavigator();
 
-function TransactionsScreen() {
+const TransactionsScreen = () => {
   const dispatch = useDispatch();
   const transactions = useSelector(
     (state: RootState) => state.transactions.items,
@@ -52,7 +53,14 @@ function TransactionsScreen() {
       />
     </View>
   );
-}
+};
+
+const ProfileScreen = () => {
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.authentication.isAuthenticated,
+  );
+  return <Profile isAuthenticated={isAuthenticated} />;
+};
 
 const pluginScreens = {
   TransactionsPlugin: {
@@ -61,14 +69,25 @@ const pluginScreens = {
   },
   ProfilePlugin: {
     name: 'Profile',
-    component: Profile,
+    component: ProfileScreen,
   },
 };
 
 export default function BottomTabNavigator() {
+  const dispatch = useDispatch();
   const enabledScreens = (config.plugins.bottomTabPlugins ?? []).map(
     key => pluginScreens[key],
   );
+
+  const getAuthenticated = async () => {
+    const authPlugin = await import('AuthPlugin/Auth');
+    const authenticationStatus = authPlugin.authenticate();
+    dispatch(addAuthenticationStatus(authenticationStatus));
+  };
+
+  useEffect(() => {
+    getAuthenticated();
+  }, []);
 
   if (!enabledScreens.length) {
     return (

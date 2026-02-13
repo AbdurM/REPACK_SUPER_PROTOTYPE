@@ -57,7 +57,13 @@ const Profile = ({ isAuthenticated }) => (
         </View>
       </ScrollView>
     ) : (
-      <Text>Authentication required to view this page</Text>
+      <View style={styles.authNotice}>
+        <Text style={styles.authTitle}>You're almost there</Text>
+        <Text style={styles.authMessage}>
+          Please verify your identity to view your profile and contact details.
+        </Text>
+        <Text style={styles.authHint}>It only takes a moment.</Text>
+      </View>
     )}
   </SafeAreaView>
 );
@@ -130,5 +136,28 @@ const styles = StyleSheet.create({
   note: {
     color: 'slategray',
     lineHeight: 20,
+  },
+  authNotice: {
+    margin: 24,
+    padding: 20,
+    borderRadius: 16,
+    backgroundColor: '#f7f9ff',
+    borderWidth: 1,
+    borderColor: '#d8e2ff',
+  },
+  authTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#1e2a5a',
+  },
+  authMessage: {
+    marginTop: 8,
+    color: '#3a4a7a',
+    lineHeight: 20,
+  },
+  authHint: {
+    marginTop: 6,
+    color: '#6b7bb0',
+    fontSize: 12,
   },
 });

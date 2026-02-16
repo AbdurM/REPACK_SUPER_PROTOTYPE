@@ -1,9 +1,13 @@
 export const config =
 {
-  "plugins": [
-    "TransactionsPlugin",
-    "ProfilePlugin",
-  ],
+  
+  "plugins": {
+    "bottomTabPlugins": [
+      "TransactionsPlugin",
+      "ProfilePlugin",
+    ],
+    "otherPlugins":["AuthPlugin"]
+},
   "transactionsPluginSettings": {
     "isHeaderVisible": true,
     "content": {

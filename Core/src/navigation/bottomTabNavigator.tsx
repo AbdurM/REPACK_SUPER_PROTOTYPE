@@ -13,6 +13,11 @@ import { addAuthenticationStatus } from '../store/authSlice';
 const TransactionsList = React.lazy(
   () => import('TransactionsPlugin/TransactionsList'),
 );
+
+const TestComponent = React.lazy(
+  () => import('TransactionsPlugin/TestComponent'),
+);
+
 const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
 
 const Tab = createBottomTabNavigator();

@@ -40,6 +40,7 @@ export default Repack.defineRspackConfig({
       dts: false,
       exposes: {
         './TransactionsList': './TransactionsList',
+        './TestComponent': './TestComponent',
        },
     }),
   ],

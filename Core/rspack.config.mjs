@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
  * Learn about Re.Pack configuration: https://re-pack.dev/docs/guides/configuration
  */
 
-export default Repack.defineRspackConfig({
+export default Repack.defineRspackConfig(({platform})=>{return {
   context: __dirname,
   entry: './index.js',
   resolve: {
@@ -37,10 +37,10 @@ export default Repack.defineRspackConfig({
       name: 'core',
       dts: false,
       remotes: {
-        TransactionsPlugin: `TransactionsPlugin@http://127.0.0.1:9000/ios/TransactionsPlugin.container.js.bundle`,
-        ProfilePlugin: `ProfilePlugin@http://127.0.0.1:9001/ios/ProfilePlugin.container.js.bundle`,
-        AuthPlugin:`AuthPlugin@http://127.0.0.1:9002/ios/AuthPlugin.container.js.bundle`,
+        TransactionsPlugin: `TransactionsPlugin@http://localhost:9000/${platform}/mf-manifest.json`,
+        ProfilePlugin: `ProfilePlugin@http://127.0.0.1:9001/${platform}/mf-manifest.json`,
+        AuthPlugin:`AuthPlugin@http://127.0.0.1:9002/${platform}/mf-manifest.json`,
       }
     })
   ],
-});
+}});

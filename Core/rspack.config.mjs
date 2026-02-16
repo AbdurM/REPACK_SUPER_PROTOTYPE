@@ -38,8 +38,8 @@ export default Repack.defineRspackConfig(({platform})=>{return {
       dts: false,
       remotes: {
         TransactionsPlugin: `TransactionsPlugin@http://localhost:9000/${platform}/mf-manifest.json`,
-        ProfilePlugin: `ProfilePlugin@http://127.0.0.1:9001/${platform}/mf-manifest.json`,
-        AuthPlugin:`AuthPlugin@http://127.0.0.1:9002/${platform}/mf-manifest.json`,
+        ProfilePlugin: `ProfilePlugin@http://localhost:9001/${platform}/mf-manifest.json`,
+        AuthPlugin:`AuthPlugin@http://localhost:9002/${platform}/mf-manifest.json`,
       }
     })
   ],

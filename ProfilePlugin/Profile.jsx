@@ -1,72 +1,78 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 
-const Profile = ({ isAuthenticated }) => (
-  <SafeAreaView style={styles.safeArea}>
-    {isAuthenticated ? (
-      <ScrollView contentContainerStyle={styles.content}>
-        <View style={styles.header}>
-          <View style={styles.avatar}>
-            <Text style={styles.avatarInitial}>A</Text>
-          </View>
-          <View>
-            <Text style={styles.name}>Abdur Mohammed</Text>
-            <Text style={styles.fund}>FutureBuild Super</Text>
-            <Text style={styles.memberId}>Member · 482910</Text>
-          </View>
-        </View>
+const Profile = ({ isAuthenticated }) => {
+  // Just call it for the purpose of the POC.
+  const systemName = DeviceInfo.getSystemName();
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Contact details</Text>
-          <View style={styles.row}>
-            <Text style={styles.rowLabel}>Email</Text>
-            <Text style={styles.rowValue}>abdur.mohammed@email.com</Text>
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      {isAuthenticated ? (
+        <ScrollView contentContainerStyle={styles.content}>
+          <View style={styles.header}>
+            <View style={styles.avatar}>
+              <Text style={styles.avatarInitial}>A</Text>
+            </View>
+            <View>
+              <Text style={styles.name}>Abdur Mohammed</Text>
+              <Text style={styles.fund}>FutureBuild Super</Text>
+              <Text style={styles.memberId}>Member · 482910</Text>
+            </View>
           </View>
-          <View style={styles.row}>
-            <Text style={styles.rowLabel}>Phone</Text>
-            <Text style={styles.rowValue}>+61 400 123 456</Text>
-          </View>
-          <View style={styles.row}>
-            <Text style={styles.rowLabel}>Address</Text>
-            <Text style={styles.rowValue}>12 Bridge Street, Sydney NSW</Text>
-          </View>
-        </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Account details</Text>
-          <View style={styles.row}>
-            <Text style={styles.rowLabel}>Fund type</Text>
-            <Text style={styles.rowValue}>MySuper balanced</Text>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Contact details</Text>
+            <View style={styles.row}>
+              <Text style={styles.rowLabel}>Email</Text>
+              <Text style={styles.rowValue}>abdur.mohammed@email.com</Text>
+            </View>
+            <View style={styles.row}>
+              <Text style={styles.rowLabel}>Phone</Text>
+              <Text style={styles.rowValue}>+61 400 123 456</Text>
+            </View>
+            <View style={styles.row}>
+              <Text style={styles.rowLabel}>Address</Text>
+              <Text style={styles.rowValue}>12 Bridge Street, Sydney NSW</Text>
+            </View>
           </View>
-          <View style={styles.row}>
-            <Text style={styles.rowLabel}>Employer</Text>
-            <Text style={styles.rowValue}>SSNC</Text>
-          </View>
-          <View style={styles.row}>
-            <Text style={styles.rowLabel}>Joined</Text>
-            <Text style={styles.rowValue}>18 May 2019</Text>
-          </View>
-        </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Preferred communication</Text>
-          <Text style={styles.note}>
-            Statements emailed quarterly. Notifications sent by text for
-            contributions and insurance updates.
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Account details</Text>
+            <View style={styles.row}>
+              <Text style={styles.rowLabel}>Fund type</Text>
+              <Text style={styles.rowValue}>MySuper balanced</Text>
+            </View>
+            <View style={styles.row}>
+              <Text style={styles.rowLabel}>Employer</Text>
+              <Text style={styles.rowValue}>SSNC</Text>
+            </View>
+            <View style={styles.row}>
+              <Text style={styles.rowLabel}>Joined</Text>
+              <Text style={styles.rowValue}>18 May 2019</Text>
+            </View>
+          </View>
+
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Preferred communication</Text>
+            <Text style={styles.note}>
+              Statements emailed quarterly. Notifications sent by text for
+              contributions and insurance updates.
+            </Text>
+          </View>
+        </ScrollView>
+      ) : (
+        <View style={styles.authNotice}>
+          <Text style={styles.authTitle}>You're almost there</Text>
+          <Text style={styles.authMessage}>
+            Please verify your identity to view your profile and contact details.
           </Text>
+          <Text style={styles.authHint}>It only takes a moment.</Text>
         </View>
-      </ScrollView>
-    ) : (
-      <View style={styles.authNotice}>
-        <Text style={styles.authTitle}>You're almost there</Text>
-        <Text style={styles.authMessage}>
-          Please verify your identity to view your profile and contact details.
-        </Text>
-        <Text style={styles.authHint}>It only takes a moment.</Text>
-      </View>
-    )}
-  </SafeAreaView>
-);
+      )}
+    </SafeAreaView>
+  )
+};
 
 export default Profile;
 

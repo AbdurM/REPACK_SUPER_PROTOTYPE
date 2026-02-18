@@ -5,6 +5,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios:AppA": "npx react-native run-ios --scheme AppA",
+    "ios:AppB": "npx react-native run-ios --scheme AppB",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
@@ -16,9 +18,10 @@
     "@reduxjs/toolkit": "^2.2.3",
     "react": "19.1.0",
     "react-native": "0.81.5",
-    "react-redux": "^9.1.2",
+    "react-native-device-info": "15.0.1",
     "react-native-safe-area-context": "^5.6.2",
-    "react-native-screens": "^4.21.0"
+    "react-native-screens": "^4.21.0",
+    "react-redux": "^9.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

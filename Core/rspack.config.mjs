@@ -36,10 +36,11 @@ export default Repack.defineRspackConfig(({platform})=>{return {
     new Repack.plugins.ModuleFederationPluginV2({
       name: 'core',
       dts: false,
+      defaultRuntimePlugins: ['@callstack/repack/mf/core-plugin'],
       remotes: {
-        TransactionsPlugin: `TransactionsPlugin@http://localhost:9000/${platform}/mf-manifest.json`,
-        ProfilePlugin: `ProfilePlugin@http://localhost:9001/${platform}/mf-manifest.json`,
-        AuthPlugin:`AuthPlugin@http://localhost:9002/${platform}/mf-manifest.json`,
+        TransactionsPlugin: 'TransactionsPlugin@dynamic',
+        ProfilePlugin: 'ProfilePlugin@dynamic',
+        AuthPlugin: 'AuthPlugin@dynamic',
       }
     })
   ],

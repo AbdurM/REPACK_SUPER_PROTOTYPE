@@ -1,6 +1,6 @@
 export const Auth = {
   authenticate: () => {
-    return false;
+    return true;
   },
 };
 

@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useAuthStore } from './store/authStore';
 
 const Profile = ({ isAuthenticated }) => (
-  <SafeAreaView style={styles.safeArea}>
-    {isAuthenticated ? (
+  <ProfileContent isAuthenticated={isAuthenticated} />
+);
+
+const ProfileContent = ({ isAuthenticated }) => {
+  const setAuthenticated = useAuthStore(state => state.setAuthenticated);
+  const authState = useAuthStore(state => state.isAuthenticated);
+
+  useEffect(() => {
+    setAuthenticated(Boolean(isAuthenticated));
+  }, [isAuthenticated, setAuthenticated]);
+
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      {authState ? (
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.header}>
           <View style={styles.avatar}>
@@ -64,9 +77,10 @@ const Profile = ({ isAuthenticated }) => (
         </Text>
         <Text style={styles.authHint}>It only takes a moment.</Text>
       </View>
-    )}
-  </SafeAreaView>
-);
+      )}
+    </SafeAreaView>
+  );
+};
 
 export default Profile;
 

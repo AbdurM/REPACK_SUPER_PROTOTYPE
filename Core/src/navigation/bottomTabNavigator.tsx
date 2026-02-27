@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -9,6 +9,7 @@ import { addTransaction } from '../store/transactionsSlice';
 import Fab from '../components/Fab';
 import { getNextPreset } from '../store/transactionPresets';
 import { addAuthenticationStatus } from '../store/authSlice';
+import Prelanding from '../screens/Prelanding';
 
 const TransactionsList = React.lazy(
   () => import('TransactionsPlugin/TransactionsList'),
@@ -87,6 +88,7 @@ const pluginScreens = {
 
 export default function BottomTabNavigator() {
   const dispatch = useDispatch();
+  const [showLoginScreen, setShowLoginScreen] = useState(false);
   const isAuthenticated = useSelector(
     (state: RootState) => state.authentication.isAuthenticated,
   );
@@ -107,6 +109,12 @@ export default function BottomTabNavigator() {
     getAuthenticated();
   }, []);
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      setShowLoginScreen(false);
+    }
+  }, [isAuthenticated]);
+
   if (!enabledScreens.length) {
     return (
       <SafeAreaView style={styles.container}>
@@ -116,6 +124,14 @@ export default function BottomTabNavigator() {
   }
 
   if (!isAuthenticated) {
+    if (!showLoginScreen) {
+      return (
+        <View style={styles.screen}>
+          <Prelanding onLoginPress={() => setShowLoginScreen(true)} />
+        </View>
+      );
+    }
+
     const authPluginConfig = config.authPluginSettings.content
     return (
       <View style={styles.screen}>
@@ -125,7 +141,7 @@ export default function BottomTabNavigator() {
           setAuthenticationStatus={(value: boolean) => {
             dispatch(addAuthenticationStatus(value));
           }}
-          isRegisterButtonVisible={false}
+          isRegisterButtonVisible={config.authPluginSettings.isRegisterButtonVisible}
         />
       </View>
     );

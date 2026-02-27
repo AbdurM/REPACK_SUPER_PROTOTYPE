@@ -28,10 +28,10 @@ export const config =
     cardVisible: true,
   },
   authPluginSettings: {
-    primaryColour: '#00000',
-    isRegisterBtnVisible: true,
+    primaryColour: '#0F479F',
+    isRegisterButtonVisible: false,
     content: {
-      usernameLabel: "Member number/Email address",
+      usernameLabel: "Member number/Email address ",
       passwordLabel: "Password",
     },
   },

@@ -101,11 +101,11 @@ const Login = ({
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#1E2965',
+    backgroundColor: '#0F479F',
   },
   container: {
     flex: 1,
-    backgroundColor: '#1E2965',
+    backgroundColor: '#0F479F',
   },
   scrollContent: {
     flexGrow: 1,

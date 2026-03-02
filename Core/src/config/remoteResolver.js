@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 import { ScriptManager } from '@callstack/repack/client';
-import { config } from './config';
+import { dynamicUrls } from './config';
 
 let initialized = false;
 
@@ -10,7 +10,7 @@ export const initializeRemoteResolver = () => {
   ScriptManager.shared.addResolver(async (scriptId, caller) => {
     let result;
 
-    Object.entries(config?.remotes ?? {}).forEach(([remoteName, remoteConfig]) => {
+    Object.entries(dynamicUrls?.remotes ?? {}).forEach(([remoteName, remoteConfig]) => {
       if (result) return;
 
       const baseUrl = (remoteConfig.baseUrl || '')

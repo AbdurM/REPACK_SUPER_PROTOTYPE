@@ -15,10 +15,9 @@ import {
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React, { Suspense, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Provider, useDispatch } from 'react-redux';
+import { Provider } from 'react-redux';
 import { store } from './store/store';
 import BottomTabNavigator from './navigation/bottomTabNavigator';
-import { addAuthenticationStatus } from './store/authSlice';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';

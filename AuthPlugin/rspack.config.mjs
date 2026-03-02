@@ -39,6 +39,7 @@ export default Repack.defineRspackConfig({
       dts: false,
       exposes: {
         './Auth': './Auth',
+        './Login': './login',
        },
     }),
   ],

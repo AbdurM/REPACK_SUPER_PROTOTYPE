@@ -44,4 +44,13 @@ export default Repack.defineRspackConfig({
        },
     }),
   ],
+  shared: {
+    react: Repack.Federated.SHARED_REACT,
+    'react-native': Repack.Federated.SHARED_REACT_NATIVE,
+    'react-native-safe-area-context': {
+      singleton: true,
+      eager: true,
+      requiredVersion: false,
+    },
+  },
 });

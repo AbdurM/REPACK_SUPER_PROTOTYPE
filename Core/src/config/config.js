@@ -11,35 +11,48 @@ export const dynamicUrls = {
     AuthPlugin: {
       baseUrl: 'http://localhost:9002/[platform]',
     },
+    DashboardPlugin: {
+      baseUrl: 'http://localhost:9003/[platform]',
+    },
   }
 };
 
 export const config =
 {
   plugins: {
-    bottomTabPlugins: [
-      "DashboardPlugin",
-      "TransactionsPlugin",
-      "ProfilePlugin"
-    ],
-    otherPlugins:["AuthPlugin"] 
-  },
-  dashboardPluginSettings: {
-    cardVisible: true,
+    bottomTabPlugins: ['DashboardPlugin', 'TransactionsPlugin', 'ProfilePlugin'],
+    otherPlugins:["AuthPlugin"],
   },
   authPluginSettings: {
     primaryColour: '#0F479F',
     isRegisterButtonVisible: false,
     content: {
-      usernameLabel: "Member number/Email address ",
+      usernameLabel: "Member number or Email address ",
       passwordLabel: "Password",
     },
   },
+  dashboardPluginSettings: {
+    chart: {
+      type: "BAR",
+      visible: true,
+    },
+    balanceFYInfo: {
+      visible: true,
+    },
+    accountActions: {
+      visible: true,
+    },
+    contributionsCard: {
+      visible: true,
+    },
+  },
   transactionsPluginSettings: {
-    isHeaderVisible: true,
-    content: {
-      title: "Transactions",
-      subtitle: "For transactions over 12 months, please visit the website.",
+    headingCard: {
+      visible: true,
+      content: {
+        title: "Transactions",
+        subtitle: "For transactions over 12 months, please visit the website.",
+      },
     },
   }
 }

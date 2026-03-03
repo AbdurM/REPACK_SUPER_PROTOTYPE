@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList, useColorScheme } from 'react-native';
+import { StyleSheet, Text, View, FlatList, useColorScheme, SafeAreaView } from 'react-native';
 import React from 'react';
 
 const DEFAULT_TRANSACTIONS = [];
@@ -53,7 +53,7 @@ const TransactionsList = ({
   const isDark = useColorScheme() === 'dark';
 
   return (
-    <View style={[styles.container, isDark && styles.containerDark]}>
+    <SafeAreaView style={[styles.container, isDark && styles.containerDark]}>
       {isHeaderVisible ? (
         <View style={styles.header}>
           {content.title && <Text style={[styles.title, isDark && styles.textDark]}>{content.title}</Text> }
@@ -73,7 +73,7 @@ const TransactionsList = ({
           <View style={[styles.separator, isDark && styles.separatorDark]} />
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

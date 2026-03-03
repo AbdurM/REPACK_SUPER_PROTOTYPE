@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
  * Learn about Re.Pack configuration: https://re-pack.dev/docs/guides/configuration
  */
 
-export default Repack.defineRspackConfig(({platform})=>{return {
+export default Repack.defineRspackConfig({
   context: __dirname,
   entry: './index.js',
   resolve: {
@@ -32,26 +32,24 @@ export default Repack.defineRspackConfig(({platform})=>{return {
       ...Repack.getAssetTransformRules(),
     ],
   },
-   plugins: [new Repack.RepackPlugin(),
+  plugins: [
+    new Repack.RepackPlugin(),
     new Repack.plugins.ModuleFederationPluginV2({
-      name: 'core',
+      name: 'DashboardPlugin',
+      filename: 'DashboardPlugin.container.js.bundle',
       dts: false,
-      defaultRuntimePlugins: ['@callstack/repack/mf/core-plugin'],
-      remotes: {
-        TransactionsPlugin: 'TransactionsPlugin@dynamic',
-        ProfilePlugin: 'ProfilePlugin@dynamic',
-        AuthPlugin: 'AuthPlugin@dynamic',
-        DashboardPlugin: 'DashboardPlugin@dynamic',
-      }
-    })
+      exposes: {
+        './Dashboard': './Dashboard',
+      },
+    }),
   ],
   shared: {
-    react: Repack.Federated.SHARED_REACT,
-    'react-native': Repack.Federated.SHARED_REACT_NATIVE,
+    react: { singleton: true, eager: true },
+    'react-native': { singleton: true, eager: true },
     'react-native-safe-area-context': {
       singleton: true,
       eager: true,
       requiredVersion: false,
     },
   },
-}});
+});

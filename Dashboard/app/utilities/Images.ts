@@ -1,0 +1,141 @@
+import { ImageSourcePropType } from 'react-native';
+import AI_STAR from 'assets/icons/ai_star.png';
+import BACK_LINE_THICK from 'assets/icons/back_line_thick.png';
+import BACK from 'assets/icons/back.png';
+import BELL from 'assets/icons/bell.png';
+import CALENDAR_CLOCK_LINE from 'assets/icons/calendar_clock_line.png';
+import CALENDAR_DAY_TWO from 'assets/icons/calendar_day_two.png';
+import CALENDAR_LINE from 'assets/icons/calendar_line.png';
+import CALENDAR_PLUS from 'assets/icons/calendar_plus.png';
+import CHAT from 'assets/icons/chat.png';
+import CHEVRON_DOWN from 'assets/icons/chevron_down.png';
+import CHEVRON_LEFT from 'assets/icons/chevron_left.png';
+import CHEVRON_RIGHT from 'assets/icons/chevron_right.png';
+import CLOSE_LINE_THICK from 'assets/icons/close_line_thick.png';
+import CLOSE_LINE from 'assets/icons/close_line.png';
+import CLOSE from 'assets/icons/close.png';
+import CLOUD_DOWN from 'assets/icons/cloud_down.png';
+import DOCUMENT_PAPER from 'assets/icons/document_paper.png';
+import DOCUMENT_STACK from 'assets/icons/document_stack.png';
+import DOCUMENT from 'assets/icons/document.png';
+import EYE_FILL from 'assets/icons/eye_fill.png';
+import FLOW_CONNECTION from 'assets/icons/flow_connection.png';
+import FORWARD_LINE from 'assets/icons/forward_line.png';
+import GRAPH_LINE from 'assets/icons/graph_line.png';
+import GROW_LEAFS from 'assets/icons/grow_leafs.png';
+import HISTORY from 'assets/icons/history.png';
+import HOUSE_LINE from 'assets/icons/house_line.png';
+import INBOX from 'assets/icons/inbox.png';
+import INFO_FILL from 'assets/icons/info_fill.png';
+import MOBILE from 'assets/icons/mobile.png';
+import MORE from 'assets/icons/more.png';
+import NEGATIVE_LINE from 'assets/icons/negative_line.png';
+import NOUN_COINS from 'assets/icons/noun_coins.png';
+import NOUN_EMPLOYER from 'assets/icons/noun_employer.png';
+import NOUN_INVESTMENT from 'assets/icons/noun_investment.png';
+import NOUN_MONEY from 'assets/icons/noun_money.png';
+import NOUN_TOPUP from 'assets/icons/noun_topup.png';
+import OPEN_NEW_TAB from 'assets/icons/open_new_tab.png';
+import PDF from 'assets/icons/pdf.png';
+import PENCIL from 'assets/icons/pencil.png';
+import PIGGY from 'assets/icons/piggy.png';
+import POSITIVE_LINE from 'assets/icons/positive_line.png';
+import QUESTION from 'assets/icons/question.png';
+import RESUMMARIZE from 'assets/icons/resummarize.png';
+import SAVE_LINE from 'assets/icons/save_line.png';
+import SEARCH from 'assets/icons/search.png';
+import SETTINGS from 'assets/icons/settings.png';
+import SHARE from 'assets/icons/share.png';
+import SHIELD from 'assets/icons/shield.png';
+import SKETCH_BOOK from 'assets/icons/sketch_book.png';
+import SQUARE_BEHIND_SQUARE from 'assets/icons/square_behind_square.png';
+import STATUS from 'assets/icons/status.png';
+import STATUS_TICK from 'assets/icons/status_tick.png';
+import SUCCESS from 'assets/icons/success.png';
+import TRAILING from 'assets/icons/trailing.png';
+import TRASH_CAN from 'assets/icons/trash_can.png';
+import TV_LINE from 'assets/icons/tv_line.png';
+import UMBRELLA from 'assets/icons/umbrella.png';
+import USER_FILL from 'assets/icons/user_fill.png';
+import USER_LINE from 'assets/icons/user_line.png';
+import USER_LOCK from 'assets/icons/user_lock.png';
+import USERS_FILL_LINE from 'assets/icons/users_fill_line.png';
+import USERS_LINE from 'assets/icons/users_line.png';
+import WEB_FRAME from 'assets/icons/web_frame.png';
+import WARNING from 'assets/icons/warning.png';
+import FACE_ID from 'assets/images/faceid.png';
+import CHECK from 'assets/icons/CheckCircle.png';
+
+export const ICONS = {
+  AI_STAR: AI_STAR as ImageSourcePropType,
+  BACK_LINE_THICK: BACK_LINE_THICK as ImageSourcePropType,
+  BACK: BACK as ImageSourcePropType,
+  BELL: BELL as ImageSourcePropType,
+  CALENDAR_CLOCK_LINE: CALENDAR_CLOCK_LINE as ImageSourcePropType,
+  CALENDAR_DAY_TWO: CALENDAR_DAY_TWO as ImageSourcePropType,
+  CALENDAR_LINE: CALENDAR_LINE as ImageSourcePropType,
+  CALENDAR_PLUS: CALENDAR_PLUS as ImageSourcePropType,
+  CHAT: CHAT as ImageSourcePropType,
+  CHEVRON_DOWN: CHEVRON_DOWN as ImageSourcePropType,
+  CHEVRON_LEFT: CHEVRON_LEFT as ImageSourcePropType,
+  CHEVRON_RIGHT: CHEVRON_RIGHT as ImageSourcePropType,
+  CLOSE_LINE_THICK: CLOSE_LINE_THICK as ImageSourcePropType,
+  CLOSE_LINE: CLOSE_LINE as ImageSourcePropType,
+  CLOSE: CLOSE as ImageSourcePropType,
+  CLOUD_DOWN: CLOUD_DOWN as ImageSourcePropType,
+  DOCUMENT_PAPER: DOCUMENT_PAPER as ImageSourcePropType,
+  DOCUMENT_STACK: DOCUMENT_STACK as ImageSourcePropType,
+  DOCUMENT: DOCUMENT as ImageSourcePropType,
+  EYE_FILL: EYE_FILL as ImageSourcePropType,
+  FLOW_CONNECTION: FLOW_CONNECTION as ImageSourcePropType,
+  FORWARD_LINE: FORWARD_LINE as ImageSourcePropType,
+  GRAPH_LINE: GRAPH_LINE as ImageSourcePropType,
+  GROW_LEAFS: GROW_LEAFS as ImageSourcePropType,
+  HISTORY: HISTORY as ImageSourcePropType,
+  HOUSE_LINE: HOUSE_LINE as ImageSourcePropType,
+  INBOX: INBOX as ImageSourcePropType,
+  INFO_FILL: INFO_FILL as ImageSourcePropType,
+  MOBILE: MOBILE as ImageSourcePropType,
+  MORE: MORE as ImageSourcePropType,
+  NEGATIVE_LINE: NEGATIVE_LINE as ImageSourcePropType,
+  NOUN_COINS: NOUN_COINS as ImageSourcePropType,
+  NOUN_EMPLOYER: NOUN_EMPLOYER as ImageSourcePropType,
+  NOUN_INVESTMENT: NOUN_INVESTMENT as ImageSourcePropType,
+  NOUN_MONEY: NOUN_MONEY as ImageSourcePropType,
+  NOUN_TOPUP: NOUN_TOPUP as ImageSourcePropType,
+  OPEN_NEW_TAB: OPEN_NEW_TAB as ImageSourcePropType,
+  PDF: PDF as ImageSourcePropType,
+  PENCIL: PENCIL as ImageSourcePropType,
+  PIGGY: PIGGY as ImageSourcePropType,
+  POSITIVE_LINE: POSITIVE_LINE as ImageSourcePropType,
+  QUESTION: QUESTION as ImageSourcePropType,
+  RESUMMARIZE: RESUMMARIZE as ImageSourcePropType,
+  SAVE_LINE: SAVE_LINE as ImageSourcePropType,
+  SEARCH: SEARCH as ImageSourcePropType,
+  SETTINGS: SETTINGS as ImageSourcePropType,
+  SHARE: SHARE as ImageSourcePropType,
+  SHIELD: SHIELD as ImageSourcePropType,
+  SKETCH_BOOK: SKETCH_BOOK as ImageSourcePropType,
+  SQUARE_BEHIND_SQUARE: SQUARE_BEHIND_SQUARE as ImageSourcePropType,
+  STATUS: STATUS as ImageSourcePropType,
+  STATUS_TICK: STATUS_TICK as ImageSourcePropType,
+  SUCCESS: SUCCESS as ImageSourcePropType,
+  TRAILING: TRAILING as ImageSourcePropType,
+  TRASH_CAN: TRASH_CAN as ImageSourcePropType,
+  TV_LINE: TV_LINE as ImageSourcePropType,
+  UMBRELLA: UMBRELLA as ImageSourcePropType,
+  USER_FILL: USER_FILL as ImageSourcePropType,
+  USER_LINE: USER_LINE as ImageSourcePropType,
+  USER_LOCK: USER_LOCK as ImageSourcePropType,
+  USERS_FILL_LINE: USERS_FILL_LINE as ImageSourcePropType,
+  USERS_LINE: USERS_LINE as ImageSourcePropType,
+  WEB_FRAME: WEB_FRAME as ImageSourcePropType,
+  WARNING: WARNING as ImageSourcePropType,
+  CHECK: CHECK as ImageSourcePropType,
+} as const;
+
+export const APP_IMAGES = {
+  FACE_ID: FACE_ID as ImageSourcePropType,
+} as const;
+
+export type IconKey = keyof typeof ICONS;

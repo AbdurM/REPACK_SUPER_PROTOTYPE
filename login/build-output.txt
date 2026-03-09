@@ -1,0 +1,92 @@
+
+> login@0.0.1 start
+> react-native start --reset-cache
+
+WARNING: Detected react-native-reanimated package which requires ReanimatedPlugin plugin but it's not configured. Please add the following to your configuration file. 
+Read more https://github.com/callstack/repack/tree/main/packages/plugin-reanimated/README.md.
+
+▄▀▀▀ ▀▀▀▀   █▀▀█ █▀▀█ ▄▀▀▀ █  █
+█    ▀▀▀▀   █▀▀▀ █▀▀█ █    █▀▀▄
+▀    ▀▀▀▀ ▀ ▀    ▀  ▀  ▀▀▀ ▀  ▀
+5.2.3, powered by Rspack
+
+ r: Reload app
+ d: Open developer menu
+ j: Open debugger
+ a: Run adb reverse
+
+Press Ctrl+c or Ctrl+z to quit the dev server
+
+ℹ [09:57:12.523Z][DevServer] Server listening at http://[::1]:8081 
+ℹ [09:57:12.524Z][DevServer] Server listening at http://127.0.0.1:8081 
+⠴ [09:57:15.839Z][DevServer] [========--------] 53% ios     
+⠸ [09:57:15.838Z][DevServer] [========--------] 53% android 
+⚠ [09:57:18.052Z][LoggerPlugin] Warning in "./node_modules/react-native-reanimated/src/jestUtils/index.ts":
+  ⚠ Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+     ╭─[199:40]
+ 197 │     jest.runOnlyPendingTimers();
+ 198 │ };
+ 199 │ var requireFunction = _common.IS_JEST ? require : ()=>{
+     ·                                         ───────
+ 200 │     throw new _common.ReanimatedError('`setUpTests` is available only in Jest environment.');
+ 201 │ };
+     ╰────
+ 
+⚠ [09:57:18.052Z][LoggerPlugin] Warning in "./node_modules/react-native-worklets/src/initializers/initializers.native.ts":
+  ⚠ Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+     ╭─[202:86]
+ 200 │             });
+ 201 │             globalThis.__r.Refresh = Refresh;
+ 202 │             /* Gracefully handle unwanted imports from React Native. */ var modules = require.getModules();
+     ·                                                                                       ───────
+ 203 │             var ReactNativeModuleId = require.resolveWeak('react-native');
+ 204 │             var factory = function(_global, _require, _importDefault, _importAll, module, _exports, _dependencyMap) {
+     ╰────
+ 
+⚠ [09:57:18.096Z][LoggerPlugin] Warning in "./node_modules/react-native-reanimated/src/jestUtils/index.ts":
+  ⚠ Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+     ╭─[199:40]
+ 197 │     jest.runOnlyPendingTimers();
+ 198 │ };
+ 199 │ var requireFunction = _common.IS_JEST ? require : ()=>{
+     ·                                         ───────
+ 200 │     throw new _common.ReanimatedError('`setUpTests` is available only in Jest environment.');
+ 201 │ };
+     ╰────
+ 
+⚠ [09:57:18.096Z][LoggerPlugin] Warning in "./node_modules/react-native-worklets/src/initializers/initializers.native.ts":
+  ⚠ Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+     ╭─[202:86]
+ 200 │             });
+ 201 │             globalThis.__r.Refresh = Refresh;
+ 202 │             /* Gracefully handle unwanted imports from React Native. */ var modules = require.getModules();
+     ·                                                                                       ───────
+ 203 │             var ReactNativeModuleId = require.resolveWeak('react-native');
+ 204 │             var factory = function(_global, _require, _importDefault, _importAll, module, _exports, _dependencyMap) {
+     ╰────
+ 
+✔ [09:57:18.094Z][DevServer] Compiled ios     in 5.6s 
+✔ [09:57:18.094Z][DevServer] Compiled android in 5.5s 
+✔ [09:57:18.168Z][DevServer] Compiled ios     in 0.0s 
+⚠ [09:57:18.168Z][LoggerPlugin] Warning in "./node_modules/react-native-reanimated/src/jestUtils/index.ts":
+  ⚠ Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+     ╭─[199:40]
+ 197 │     jest.runOnlyPendingTimers();
+ 198 │ };
+ 199 │ var requireFunction = _common.IS_JEST ? require : ()=>{
+     ·                                         ───────
+ 200 │     throw new _common.ReanimatedError('`setUpTests` is available only in Jest environment.');
+ 201 │ };
+     ╰────
+ 
+⚠ [09:57:18.168Z][LoggerPlugin] Warning in "./node_modules/react-native-worklets/src/initializers/initializers.native.ts":
+  ⚠ Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+     ╭─[202:86]
+ 200 │             });
+ 201 │             globalThis.__r.Refresh = Refresh;
+ 202 │             /* Gracefully handle unwanted imports from React Native. */ var modules = require.getModules();
+     ·                                                                                       ───────
+ 203 │             var ReactNativeModuleId = require.resolveWeak('react-native');
+ 204 │             var factory = function(_global, _require, _importDefault, _importAll, module, _exports, _dependencyMap) {
+     ╰────
+ 

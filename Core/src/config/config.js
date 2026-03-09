@@ -2,17 +2,63 @@
 //because remoteConfig needs to match what we have provided to the raven team. 
 export const dynamicUrls = {
   remotes: {
-    TransactionsPlugin: {
-      baseUrl: 'http://localhost:9000/[platform]',
-    },
-    ProfilePlugin: {
+    // TransactionsPlugin: {
+    //   baseUrl: 'http://localhost:9000/[platform]',
+    // },
+    // ProfilePlugin: {
+    //   baseUrl: 'http://localhost:9001/[platform]',
+    // },
+    // AuthPlugin: {
+    //   baseUrl: 'http://localhost:9002/[platform]',
+    // },
+    // DashboardPlugin: {
+    //   baseUrl: 'http://localhost:9003/[platform]',
+    // },
+    LoginModule: {
       baseUrl: 'http://localhost:9001/[platform]',
     },
-    AuthPlugin: {
+    DashboardModule: {
       baseUrl: 'http://localhost:9002/[platform]',
-    },
-    DashboardPlugin: {
-      baseUrl: 'http://localhost:9003/[platform]',
     },
   }
 };
+
+export const config =
+{
+  plugins: {
+    bottomTabPlugins: ['DashboardPlugin'],
+    otherPlugins:["AuthPlugin"],
+  },
+  authPluginSettings: {
+    primaryColour: '#0F479F',
+    isRegisterButtonVisible: false,
+    content: {
+      usernameLabel: "Member number or Email address ",
+      passwordLabel: "Password",
+    },
+  },
+  dashboardPluginSettings: {
+    chart: {
+      type: "BAR",
+      visible: true,
+    },
+    balanceFYInfo: {
+      visible: true,
+    },
+    accountActions: {
+      visible: true,
+    },
+    contributionsCard: {
+      visible: true,
+    },
+  },
+  transactionsPluginSettings: {
+    headingCard: {
+      visible: true,
+      content: {
+        title: "Transactions",
+        subtitle: "For transactions over 12 months, please visit the website.",
+      },
+    },
+  }
+}

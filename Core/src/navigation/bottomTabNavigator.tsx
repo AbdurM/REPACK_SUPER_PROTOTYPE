@@ -9,12 +9,21 @@ import Fab from '../components/Fab';
 import { getNextPreset } from '../store/transactionPresets';
 import { addAuthenticationStatus } from '../store/authSlice';
 import Prelanding from '../screens/Prelanding';
+import { fetchRemoteConfig } from "../api/apiService";
 import { AppConfig } from "../types/config.types.ts";
 
-const Login = React.lazy(() => import('AuthPlugin/Login'));
-const Dashboard = React.lazy(() => import('DashboardPlugin/Dashboard'));
-const TransactionsList = React.lazy(() => import('TransactionsPlugin/TransactionsList'));
-const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
+// const Login = React.lazy(() => import('AuthPlugin/Login'));
+// const Dashboard = React.lazy(() => import('DashboardPlugin/Dashboard'));
+// const TransactionsList = React.lazy(() => import('TransactionsPlugin/TransactionsList'));
+// const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
+
+const LandingScreenView = React.lazy(
+  () => import('LoginModule/LandingscreenView')
+);
+
+const DashboardView = React.lazy(
+  () => import('DashboardModule/DashboardView')
+);
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +41,7 @@ export default function BottomTabNavigator({ config }: Props) {
 
   const DashboardScreen = () => {
     const graphImage = require('../../assets/graph.png')
-    return <Dashboard dashboardPluginSettings={config.dashboardPluginSettings} graphImage={graphImage} />;
+    return <DashboardView config={appConfig.dashboardPluginSettings} />;
   };
   
   const TransactionsScreen = () => {

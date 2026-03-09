@@ -33,7 +33,7 @@
             },
             "dashboardPluginSettings": {
                 "chart": {
-                    "type": "BAR",
+                    "type": "LINE",
                     "visible": true
                 },
                 "balanceFYInfo": {

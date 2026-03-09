@@ -9,6 +9,17 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import { ChartView } from './app/components/chart/ChartView';
+import {
+  lineData1,
+  lineData2,
+  MockBarChartData
+} from './DashboardModel';
+import { BarChartView } from './app/components/giftedCharts/barchart/BarChartView';
+import { UI } from './app/utilities/Helpers';
+import { Theme } from './app/utilities/TenantIndex';
+
+
 
 /* Fallback Dashboard Plugin*/
 
@@ -25,13 +36,57 @@ const Profile = ({ dashboardPluginSettings, graphImage }) => (
             Account #: 01234567
           </Text>
 
-          <Image
+          {/* <Image
             source={graphImage}
             style={styles.graph}
             resizeMode="contain"
-          />
+          /> */}
 
-          <View style={styles.rangeContainer}>
+               {dashboardPluginSettings.chart.visible && dashboardPluginSettings.chart.type === "LINE" &&
+                <ChartView
+                keyValue={`-chart`}
+                key={`-chart`}
+                lineData1={lineData1}
+                lineData2={lineData2}
+                yAxisSuffix={'k'}
+                verticalLinesColor='#6BB5E9'
+                title1='Balance history'
+                title2='Your contributions'
+              />
+               }
+
+               {dashboardPluginSettings.chart.visible && dashboardPluginSettings.chart.type === "BAR" &&
+                <BarChartView
+                containerStyle={{
+                   marginHorizontal: UI.responsiveWidth(5),
+                   marginTop: UI.responsiveWidth(4),
+                   backgroundColor: 'transparent',
+                   borderRadius: 0,
+                }}
+                barData={MockBarChartData}
+                barWidth={UI.responsiveWidth(2.5)}
+                spacing={UI.responsiveWidth(4.25)}
+                noOfSections={3}
+                maxValue={200}
+                width={UI.responsiveWidth(80)}
+                height={UI.responsiveWidth(35)}
+                initialSpacing={UI.responsiveWidth(1)}
+                yAxisTextColor='white'
+                xAxisLabelTextColor='white'
+                formatYLabel={(value: string) => `${Number(value)}k`}
+                rulesType="dashed"
+                rulesColor='#65778B'
+                rulesThickness={1.5}
+                showDurationSelector={true}
+                durationSelectorBackgroundColor={Theme.Colors.activeState}
+                durationTextColor='white'
+                initialDuration="1Y"
+              />
+               }
+
+
+
+          {/* <View style={styles.rangeContainer}>
             {['1W', '1M', '3M', '6M', '1Y', '5Y', '10Y'].map((item) => (
               <TouchableOpacity key={item} style={styles.rangeItem}>
                 <Text
@@ -45,7 +100,7 @@ const Profile = ({ dashboardPluginSettings, graphImage }) => (
                 {item === '1Y' && <View style={styles.activeIndicator} />}
               </TouchableOpacity>
             ))}
-          </View>
+          </View> */}
         </View>
       </View>
 

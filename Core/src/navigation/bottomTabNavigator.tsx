@@ -9,7 +9,6 @@ import Fab from '../components/Fab';
 import { getNextPreset } from '../store/transactionPresets';
 import { addAuthenticationStatus } from '../store/authSlice';
 import Prelanding from '../screens/Prelanding';
-import { fetchRemoteConfig } from "../api/apiService";
 import { AppConfig } from "../types/config.types.ts";
 
 const Login = React.lazy(() => import('AuthPlugin/Login'));

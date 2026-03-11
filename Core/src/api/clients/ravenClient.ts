@@ -12,6 +12,9 @@ export const ravenClient = axios.create({
     headers: {"Content-Type": "application/json"},
 });
 
-if (ravenBaseUrl === "/mock") {
-  attachMockInterceptor(ravenClient);
+export const attachMock = () => {
+  if (ravenBaseUrl === "/mock") {
+    attachMockInterceptor(ravenClient);
+  }
 }
+

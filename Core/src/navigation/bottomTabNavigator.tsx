@@ -13,6 +13,7 @@ import { AppConfig } from "../types/config.types.ts";
 
 const Login = React.lazy(() => import('AuthPlugin/Login'));
 const Dashboard = React.lazy(() => import('DashboardPlugin/Dashboard'));
+const DashboardView = React.lazy(() => import('DashboardModule/DashboardView'));
 const TransactionsList = React.lazy(() => import('TransactionsPlugin/TransactionsList'));
 const Profile = React.lazy(() => import('ProfilePlugin/Profile'));
 
@@ -33,6 +34,10 @@ export default function BottomTabNavigator({ config }: Props) {
   const DashboardScreen = () => {
     const graphImage = require('../../assets/graph.png')
     return <Dashboard dashboardPluginSettings={config.dashboardPluginSettings} graphImage={graphImage} />;
+  };
+
+  const DashboardScreen2 = () => {
+    return <DashboardView config={config.dashboardPluginSettings}/>;
   };
   
   const TransactionsScreen = () => {
@@ -102,6 +107,10 @@ export default function BottomTabNavigator({ config }: Props) {
     DashboardPlugin: {
       name: 'Dashboard',
       component: DashboardScreen,
+    },
+    DashboardModule: {
+      name: 'DashboardView',
+      component: DashboardScreen2,
     },
   };
   

@@ -16,6 +16,7 @@
             "plugins": {
                 "bottomTabPlugins": [
                     "DashboardPlugin",
+                    "DashboardModule",
                     "TransactionsPlugin",
                     "ProfilePlugin"
                 ],

@@ -14,5 +14,8 @@ export const dynamicUrls = {
     DashboardPlugin: {
       baseUrl: 'http://localhost:9003/[platform]',
     },
+    DashboardModule: {
+      baseUrl: 'http://localhost:9004/[platform]',
+    },
   }
 };

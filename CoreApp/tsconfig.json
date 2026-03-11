@@ -6,12 +6,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
+      "api/*": ["app/api/*"],
       "assets/*": ["app/assets/*"],
       "components/*": ["app/components/*"],
       "screens/*": ["app/screens/*"],
       "services/*": ["app/services/*"],
       "utilities/*": ["app/utilities/*"],
       "context/*": ["app/context/*"],
+      "mocks/*": ["app/mocks/*"],
       "templates/*": ["app/templates/*"],
       "config/*": ["app/config/*"]
     }

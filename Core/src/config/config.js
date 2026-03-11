@@ -23,42 +23,42 @@ export const dynamicUrls = {
   }
 };
 
-export const config =
-{
-  plugins: {
-    bottomTabPlugins: ['DashboardPlugin'],
-    otherPlugins:["AuthPlugin"],
-  },
-  authPluginSettings: {
-    primaryColour: '#0F479F',
-    isRegisterButtonVisible: false,
-    content: {
-      usernameLabel: "Member number or Email address ",
-      passwordLabel: "Password",
-    },
-  },
-  dashboardPluginSettings: {
-    chart: {
-      type: "BAR",
-      visible: true,
-    },
-    balanceFYInfo: {
-      visible: true,
-    },
-    accountActions: {
-      visible: true,
-    },
-    contributionsCard: {
-      visible: true,
-    },
-  },
-  transactionsPluginSettings: {
-    headingCard: {
-      visible: true,
-      content: {
-        title: "Transactions",
-        subtitle: "For transactions over 12 months, please visit the website.",
-      },
-    },
-  }
-}
+// export const config =
+// {
+//   plugins: {
+//     bottomTabPlugins: ['DashboardPlugin'],
+//     otherPlugins:["AuthPlugin"],
+//   },
+//   authPluginSettings: {
+//     primaryColour: '#0F479F',
+//     isRegisterButtonVisible: false,
+//     content: {
+//       usernameLabel: "Member number or Email address ",
+//       passwordLabel: "Password",
+//     },
+//   },
+//   dashboardPluginSettings: {
+//     chart: {
+//       type: "BAR",
+//       visible: true,
+//     },
+//     balanceFYInfo: {
+//       visible: true,
+//     },
+//     accountActions: {
+//       visible: true,
+//     },
+//     contributionsCard: {
+//       visible: true,
+//     },
+//   },
+//   transactionsPluginSettings: {
+//     headingCard: {
+//       visible: true,
+//       content: {
+//         title: "Transactions",
+//         subtitle: "For transactions over 12 months, please visit the website.",
+//       },
+//     },
+//   }
+// }

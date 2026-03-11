@@ -43,7 +43,7 @@ export function DashboardView(
     dashboardData,
   } = useDashboardViewModel(mergedProps);
   // const { statusBarTheme, statusBarColor } = useTheme();
-  const { config } = props;
+  const { config } = props.route.params;
   return (
     <ThemeProvider>
       <StatusBar

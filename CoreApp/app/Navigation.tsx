@@ -72,7 +72,7 @@ const LandingScreenViewWrapper = (props: any) => {
 
 const DashboardViewWrapper = (props: any) => (
   <Suspense fallback={(<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}><ActivityIndicator size={"large"}/></View>)}>
-    <DashboardView {...props} config={appConfig.dashboardPluginSettings} />
+    <DashboardView {...props} />
   </Suspense>
 );
 
@@ -82,7 +82,9 @@ const AppStack = createNativeStackNavigator<AppStackParamList>();
 const MainTab = createBottomTabNavigator();
 
 // Main Tab Navigator with 4 tabs
-function MainTabNavigator() {
+function MainTabNavigator({ route }) {
+  const { config } = route.params
+
   return (
     <MainTab.Navigator
       screenOptions={({route}) => ({
@@ -92,13 +94,16 @@ function MainTabNavigator() {
         tabBarButton: props => CustomTabButton({route, ...props}),
       })}
     >
-      <MainTab.Screen 
-        name="Dashboard" 
-        component={DashboardViewWrapper}
-        options={{
-          tabBarLabel: 'Dashboard',
-        }}
-      />
+      {config.plugins.bottomTabPlugins.includes('DashboardPlugin') && (
+        <MainTab.Screen 
+          name="Dashboard" 
+          component={DashboardViewWrapper}
+          initialParams={{ config: config.dashboardPluginSettings }}
+          options={{
+            tabBarLabel: 'Dashboard',
+          }}
+        />
+      )}
       <MainTab.Screen 
         name="Investments" 
         component={InvestmentsScreen}
@@ -142,6 +147,7 @@ function AuthStackNavigator({
 
 function AppNavigator({
   initialRouteName = NavStates.screenNames.landingScreenView,
+  appConfig
 }: AppStackNavigatorProps) {
   return (
     <AppStack.Navigator
@@ -155,6 +161,7 @@ function AppNavigator({
       <AppStack.Screen
         name="MainTabs"
         component={MainTabNavigator}
+        initialParams={{ config: appConfig }}
         options={{
           animation: 'none', // Set animation for this specific screen
         }}

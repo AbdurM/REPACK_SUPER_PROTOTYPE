@@ -1,0 +1,60 @@
+[
+    {
+        "id": "d6e9e329-447c-46eb-9806-b172c00f00ce",
+        "application": "raven-portal",
+        "environment": "dev",
+        "label": "default",
+        "version": 5,
+        "createdBy": null,
+        "createdAt": "2026-03-02T03:59:17.452002Z",
+        "lastModifiedBy": null,
+        "lastModifiedAt": "2026-03-04T23:59:45.209689Z",
+        "managementCompany": "cg",
+        "name": "raven-mobile-poc-config",
+        "type": null,
+        "value": {
+            "plugins": {
+                "bottomTabPlugins": [
+                    "DashboardPlugin",
+                    "TransactionsPlugin",
+                    "ProfilePlugin"
+                ],
+                "otherPlugins": [
+                    "AuthPlugin"
+                ]
+            },
+            "authPluginSettings": {
+                "primaryColour": "#0F479F",
+                "isRegisterButtonVisible": false,
+                "content": {
+                    "usernameLabel": "Member number or Email address ",
+                    "passwordLabel": "Password"
+                }
+            },
+            "dashboardPluginSettings": {
+                "chart": {
+                    "type": "LINE",
+                    "visible": true
+                },
+                "balanceFYInfo": {
+                    "visible": true
+                },
+                "accountActions": {
+                    "visible": true
+                },
+                "contributionsCard": {
+                    "visible": true
+                }
+            },
+            "transactionsPluginSettings": {
+                "headingCard": {
+                    "visible": true,
+                    "content": {
+                        "title": "Transactions",
+                        "subtitle": "For transactions over 12 months, please visit the website."
+                    }
+                }
+            }
+        }
+    }
+]

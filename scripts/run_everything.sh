@@ -7,23 +7,23 @@ tell application "iTerm"
     activate
 
     -- ========== Right Column ==========
-    set right_shift to 1176
+    set right_shift to 1076
 
     -- Window 5 (Bottom Right) - reuse current window
     set lastWindow to current window
     tell lastWindow
-        set bounds to {0 + right_shift, 365, 550 + right_shift, 1025}
+        set bounds to {0 + right_shift, 365, 650 + right_shift, 1025}
         tell current session
-            write text "cd '$BASE_DIR/../Core'"
+            write text "cd '$BASE_DIR/../CoreApp'"
         end tell
     end tell
 
     -- Window 4 (Top Right)
     create window with default profile
     tell current window
-        set bounds to {0 + right_shift, 0, 550 + right_shift, 330}
+        set bounds to {0 + right_shift, 0, 650 + right_shift, 330}
         tell current session
-            write text "cd '$BASE_DIR/../Core'"
+            write text "cd '$BASE_DIR/../CoreApp'"
             write text "npm run start"
         end tell
     end tell
@@ -33,9 +33,9 @@ tell application "iTerm"
     -- Window 1 (Top Left)
     create window with default profile
     tell current window
-        set bounds to {0, 0, 550, 330}
+        set bounds to {0, 0, 700, 330}
         tell current session
-            write text "cd '$BASE_DIR/../TransactionsPlugin'"
+            write text "cd '$BASE_DIR/../Dashboard'"
             write text "npm run start"
         end tell
     end tell
@@ -43,19 +43,9 @@ tell application "iTerm"
     -- Window 2 (Middle Left)
     create window with default profile
     tell current window
-        set bounds to {0, 365, 550, 700}
+        set bounds to {0, 365, 700, 700}
         tell current session
-            write text "cd '$BASE_DIR/../ProfilePlugin'"
-            write text "npm run start"
-        end tell
-    end tell
-
-    -- Window 3 (Bottom Left)
-    create window with default profile
-    tell current window
-        set bounds to {0, 700, 550, 1025}
-        tell current session
-            write text "cd '$BASE_DIR/../AuthPlugin'"
+            write text "cd '$BASE_DIR/../login'"
             write text "npm run start"
         end tell
     end tell

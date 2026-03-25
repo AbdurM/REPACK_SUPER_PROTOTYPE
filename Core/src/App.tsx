@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import {
   StatusBar,
   StyleSheet,
@@ -24,7 +17,6 @@ import { ravenBaseUrl } from "./api/clients/ravenClient"
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const isDarkMode = useColorScheme() === 'dark';
 
   const [config, setConfig] = useState<AppConfig | null>(null);
 
@@ -66,7 +58,6 @@ function App() {
   return (
     <Provider store={store}>
       <SafeAreaProvider>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
         <AppContent />
       </SafeAreaProvider>
     </Provider>

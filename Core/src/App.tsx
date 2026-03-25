@@ -11,36 +11,27 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import BottomTabNavigator from './navigation/bottomTabNavigator';
-import { fetchRemoteConfig } from "./api/apiService";
 import { AppConfig } from "./types/config.types.ts";
-import { ravenBaseUrl } from "./api/clients/ravenClient"
+import { loadConfig } from './utils/loadConfig';
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   const [config, setConfig] = useState<AppConfig | null>(null);
 
-  const loadConfig = async () => {
-    try {
-      const data = await fetchRemoteConfig();
-      if (!Array.isArray(data) || data.length === 0) {
-        throw new Error("Response is not an array or is empty");
-      }
-      if (ravenBaseUrl === "/mock") { // Temporary soltion to parse mock value.
-        setConfig(data[0].value);
-      } else {
-        const parsedConfig: AppConfig = JSON.parse(data[0].value);
-        setConfig(parsedConfig);
-      }
-    } catch (error: any) {
-      console.log("Failed to parse JSON from Raven.", error)
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    loadConfig();
+    const fetchConfig = async () => {
+      try {
+        const parsedConfig = await loadConfig();
+        setConfig(parsedConfig);
+      } catch (error: any) {
+        console.log("Failed to parse JSON from Raven.", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchConfig();
   }, []);
 
   const AppContent = () => {

@@ -1,11 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit';
-import transactionsReducer from './transactionsSlice';
-import authenticationReducer from './authSlice';
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+
+const dummySlice = createSlice({
+  name: 'dummy',
+  initialState: {
+    value: 'dummy',
+  },
+  reducers: {},
+});
 
 export const store = configureStore({
   reducer: {
-    transactions: transactionsReducer,
-    authentication: authenticationReducer,
+    dummy: dummySlice.reducer,
   },
 });
 

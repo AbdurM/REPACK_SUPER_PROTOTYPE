@@ -27,37 +27,5 @@ tell application "iTerm"
             write text "npm run start"
         end tell
     end tell
-
-    
-    -- ========== Left Column ==========
-    -- Window 1 (Top Left)
-    create window with default profile
-    tell current window
-        set bounds to {0, 0, 550, 330}
-        tell current session
-            write text "cd '$BASE_DIR/../TransactionsPlugin'"
-            write text "npm run start"
-        end tell
-    end tell
-
-    -- Window 2 (Middle Left)
-    create window with default profile
-    tell current window
-        set bounds to {0, 365, 550, 700}
-        tell current session
-            write text "cd '$BASE_DIR/../ProfilePlugin'"
-            write text "npm run start"
-        end tell
-    end tell
-
-    -- Window 3 (Bottom Left)
-    create window with default profile
-    tell current window
-        set bounds to {0, 700, 550, 1025}
-        tell current session
-            write text "cd '$BASE_DIR/../AuthPlugin'"
-            write text "npm run start"
-        end tell
-    end tell
 end tell
 EOF

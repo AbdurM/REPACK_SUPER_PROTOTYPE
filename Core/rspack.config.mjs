@@ -38,9 +38,6 @@ export default Repack.defineRspackConfig(({platform})=>{return {
       dts: false,
       defaultRuntimePlugins: ['@callstack/repack/mf/core-plugin'],
       remotes: {
-        TransactionsPlugin: 'TransactionsPlugin@dynamic',
-        ProfilePlugin: 'ProfilePlugin@dynamic',
-        AuthPlugin: 'AuthPlugin@dynamic',
         DashboardPlugin: 'DashboardPlugin@dynamic',
       }
     })
